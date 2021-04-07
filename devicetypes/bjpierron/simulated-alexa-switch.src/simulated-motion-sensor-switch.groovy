@@ -13,7 +13,7 @@
  */
 metadata {
 
-    definition (name: "Simulated Motion Sensor", namespace: "mbcheek", author: "mbcheek") {
+    definition (name: "Simulated Motion Sensor/Switch" namespace: "mbcheek", author: "mbcheek", vid: "generic-motion-2") {
         capability "Switch"
         capability "Sensor"
         capability "Actuator"
