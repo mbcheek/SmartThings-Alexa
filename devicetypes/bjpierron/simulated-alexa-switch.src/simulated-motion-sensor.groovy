@@ -13,16 +13,16 @@
  */
 metadata {
 
-    definition (name: "Simulated Alexa Switch", namespace: "bjpierron", author: "bjpierron") {
+    definition (name: "Simulated Motion Sensor", namespace: "mbcheek", author: "mbcheek") {
         capability "Switch"
         capability "Sensor"
         capability "Actuator"
-        capability "Contact Sensor"	    		
+        capability "Motion Sensor"	    		
     }
     
     simulator {
-		status "open": "contact:open"
-		status "closed": "contact:closed"
+		status "active": "motion:active"
+		status "inactive": "motion:inactive"
 	}
 
     tiles {
@@ -40,10 +40,10 @@ def parse(description) {
 
 def on() {
     sendEvent(name: "switch", value: "on")
-    sendEvent(name: "contact", value: "open")
+    sendEvent(name: "motion", value: "active")
 }
 
 def off() {
     sendEvent(name: "switch", value: "off")
-    sendEvent(name: "contact", value: "closed")
+    sendEvent(name: "motion", value: "inactive")
 }
